@@ -11,13 +11,13 @@ public class User {
 	@Id
 	private String id;
 
-	@NotBlank(message="email is mandatory")
+	// @NotBlank(message="email is mandatory")
 	private String email;
 	private String startPrice;
 	private String contactNo;
 	private String dropPercent;
-	private String expectedPercent;
-	@NotBlank(message="anyprice is mandatory")
+	private String expectedPrice;
+	// @NotBlank(message="anyprice is mandatory")
 	private String anyPrice;
 	private String stop;
 
@@ -61,12 +61,12 @@ public class User {
 		this.dropPercent = dropPercent;
 	}
 
-	public String getExpectedPercent() {
-		return expectedPercent;
+	public String getExpectedPrice() {
+		return expectedPrice;
 	}
 
-	public void setExpectedPercent(String expectedPercent) {
-		this.expectedPercent = expectedPercent;
+	public void setExpectedPrice(String expectedPrice) {
+		this.expectedPrice = expectedPrice;
 	}
 
 	public String getAnyPrice() {

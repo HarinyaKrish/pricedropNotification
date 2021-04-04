@@ -29,9 +29,10 @@ public class UserController {
 
 	@PostMapping("/saveusers")
 	public ResponseEntity<String> insertUser(@Valid @RequestBody User user) {
+		Boolean status;
 
-		User users = userservice.saveUsers(user);
-		if (users != null)
+		status = userservice.saveUsers(user);
+		if (status == true)
 			return ResponseEntity.ok("User is valid");
 		else
 			return ResponseEntity.ok("User is not valid");

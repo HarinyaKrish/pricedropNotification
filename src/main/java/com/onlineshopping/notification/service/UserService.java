@@ -18,15 +18,19 @@ public class UserService {
 		return alertrepo.findAll();
 	}
 
-	public User saveUsers(User user) {
-		User userobj = null;
-		if (user.getAnyPrice() != null && user.getEmail() != null) {
-			if (user.getDropPercent() != null || user.getExpectedPercent() != null) {
-				userobj = alertrepo.save(user);
+	public Boolean saveUsers(User user) {
+		Boolean flag = false;
+
+		if (user.getAnyPrice() != null && user.getEmail() != null && user.getEmail().length() != 0
+				&& user.getAnyPrice().length() != 0) {
+			if ((user.getDropPercent() != null || user.getExpectedPrice() != null)
+					&& (user.getExpectedPrice().length() != 0 || user.getDropPercent().length() != 0)) {
+				alertrepo.save(user);
+				flag = true;
 			}
 		}
 
-		return userobj;
+		return flag;
 
 	}
 
